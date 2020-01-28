@@ -37,9 +37,9 @@ phases:
 artifacts:
     files:
         - target/*.jar
-        - imagedefinitions.json
+        - target/imagedefinitions.json
 
-    discard-paths: yes
+    discard-paths: yes 
 cache:
     paths:
         - '/root/.m2/**/*'
