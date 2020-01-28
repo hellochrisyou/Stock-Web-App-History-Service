@@ -1,0 +1,36 @@
+schema{
+ query: Query
+ mutation : Mutation
+}
+
+type Query {
+	getAllHistory(inputEmail: String]): BaseHistory
+}
+
+type Mutation {
+	addHistories(historyInput: [HistoryInput]): Response_History
+	clearHistory
+	
+}
+
+scalar DateTime
+
+type BaseHistory {
+	id: ID,
+	email: String,
+	action: String,
+	timeOfAction: DateTime
+}
+
+type Response_History {
+	data: [BaseHistory]
+}
+
+
+input HistoryInput {
+	id: ID,
+	email: String,
+	title: String,
+	timeOfAction: DateTime
+}
+
