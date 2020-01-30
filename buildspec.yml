@@ -42,12 +42,7 @@ phases:
             artifact2:
                files:
                 - imagedefinitions.json            
-        discard-paths: yes 
-    secondary-artifacts:
-        artifactIdentifier:
-            - imagedefinitions.json            
-            files:
-                - ./*
+        discard-paths: yes     
     cache:
         paths:
             - '/root/.m2/**/*'
