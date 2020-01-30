@@ -35,11 +35,24 @@ phases:
           - echo Writing image definitions file...
           - printf '[{"name":"HistoryContainer","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
+    secondary-artifacts:
+        artifact1: *.jar
+          base-directory: ./target
+          files:
+            - *.jar
+        artifact2:
+          base-directory: ./
+          files:
+            - imagedefinitions.json
     files:
         - target/*.jar
-        - target/imagedefinitions.json
-
+        
     discard-paths: yes 
+secondary-artifacts:
+    artifactIdentifier:
+        - imagedefinitions.json            
+        files:
+            - ./*
 cache:
     paths:
         - '/root/.m2/**/*'
