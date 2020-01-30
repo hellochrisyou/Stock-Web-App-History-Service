@@ -34,15 +34,15 @@ phases:
           - docker push $REPOSITORY_URI:$IMAGE_TAG
           - echo Writing image definitions file...
           - printf '[{"name":"HistoryContainer","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json          
-    artifacts:
-        secondary-artifacts:
-            artifact1: 
-              files:
-                - target/*.jar
-            artifact2:
-               files:
-                - imagedefinitions.json            
-        discard-paths: yes     
-    cache:
-        paths:
-            - '/root/.m2/**/*'
+        artifacts:
+            secondary-artifacts:
+                artifact1: 
+                  files:
+                    - target/*.jar
+                artifact2:
+                   files:
+                    - imagedefinitions.json            
+            discard-paths: yes     
+        cache:
+            paths:
+                - '/root/.m2/**/*'
